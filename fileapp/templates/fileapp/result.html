@@ -4,15 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Wynik przetwarzania</title>
 </head>
 
-<body>
-    <h1>Przetworzony tekst</h1>
-    <pre>{{ new_text }}</pre>
-    <a href="{% url 'upload' %}">Wróć</a>
-    <br>
-    <a href="{% url 'home' %}">Strona główna</a>
+<body class="flex flex-col w-screen justify-start items-center">
+    <h1 class="w-max p-4 font-bold text-2xl text-center">Przetworzony tekst</h1>
+    <pre class="pl-2 ">{{ new_text }}</pre>
+    <nav class="flex flex-row justify-center mt-4">
+        <a href="{% url 'upload' %}"
+            class="block w-fit py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold">Wróć</a>
+        <a href="{% url 'pesel' %}"
+            class="block w-fit py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold">Walidator
+            PESEL</a>
+        <a href="{% url 'home' %}"
+            class="block w-fit py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold">Strona
+            główna</a>
+    </nav>
 </body>
 
 </html>

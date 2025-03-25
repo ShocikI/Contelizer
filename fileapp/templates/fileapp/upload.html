@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Przetwarzanie tekstu</title>
 </head>
 
-<body>
-    <h1>Prześlij plik tekstowy</h1>
-    <form method="post" enctype="multipart/form-data">
+<body class="flex flex-col w-screen justify-start items-center">
+    <h1 class="w-max p-4 font-bold text-2xl text-center">Prześlij plik tekstowy</h1>
+    <form method="post" enctype="multipart/form-data" class="flex flex-row px-20 justify-center align-center">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Wyślij</button>
+        <button
+            class="py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold"
+            type="submit">Wyślij</button>
     </form>
-    <a href="{% url 'pesel' %}">Walidator PESEL</a>
-    <br>
-    <a href="{% url 'home' %}">Strona główna</a>
+    <nav class="flex flex-row justify-center mt-4">
+        <a href="{% url 'pesel' %}"
+            class="block w-fit py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold">Walidator
+            PESEL</a>
+        <a href="{% url 'home' %}"
+            class="block w-fit py-2 px-5 m-2 hover:text-white bg-yellow-200 hover:bg-gray-600 rounded underline hover:no-underline font-medium hover:font-semibold">Strona
+            główna</a>
+    </nav>
 </body>
 
 </html>
