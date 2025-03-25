@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przetwarzanie tekstu</title>
+</head>
+
+<body>
+    <h1>Prześlij plik tekstowy</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Wyślij</button>
+    </form>
+    <a href="{% url 'pesel' %}">Walidator PESEL</a>
+    <br>
+    <a href="{% url 'home' %}">Strona główna</a>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="PESEL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wynik przetwarzania</title>
+</head>
+
+<body>
+    <h1>Przetworzony tekst</h1>
+    <pre>{{ new_text }}</pre>
+    <a href="{% url 'upload' %}">Wróć</a>
+    <br>
+    <a href="{% url 'home' %}">Strona główna</a>
+</body>
+
+</html>

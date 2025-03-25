@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+</head>
+
+<body>
+    <h1>Wybierz zadanie:</h1>
+    <ul>
+        <li>
+            <a href="{% url 'upload' %}">Przetwarzanie tekstu</a>
+        </li>
+        <li>
+            <a href="{% url 'pesel' %}">Walidacja PESEL</a>
+        </li>
+    </ul>
+</body>
+
+</html>
